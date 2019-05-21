@@ -65,4 +65,4 @@ sudo ./docker_load_fixture.sh
 
 --------------------------------------------------------------------------------
 
-postaman.json
+postman.json

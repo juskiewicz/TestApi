@@ -1,0 +1,58 @@
+version: "3"
+
+services:
+  rest_web:
+    build: ./config/dockerfiles/nginx
+    image: nginx
+    container_name: rest_web
+    volumes:
+      - ./../ms_security:/var/www/vhosts/ms_security:cached
+      - ./config/ui_loadbalancer.conf:/etc/nginx/conf.d/ui_loadbalancer.conf
+      - ./config/ms_security.conf:/etc/nginx/conf.d/ms_security.conf
+      - ./nginx/log:/var/log/nginx
+    depends_on:
+      - rest_php
+    expose:
+      - 8010
+    ports:
+      - "8010:8010"
+    environment:
+      VIRTUAL_HOST: ${API_VIRTUAL_HOST}
+    restart: on-failure:10
+
+  rest_php:
+    build:
+      context: ./config/dockerfiles/php
+      args:
+        TIMEZONE: ${TIMEZONE}
+    image: php:7.3-fpm
+    container_name: rest_php73
+    volumes:
+      - ./../ms_security:/var/www/vhosts/ms_security:cached
+      - ./profiler:/tmp/xdebug
+    expose:
+      - 8010
+    extra_hosts:
+      - "${API_VIRTUAL_HOST}:${NGINX_PROXY_IP}"
+    environment:
+      XDEBUG_CONFIG: remote_host=${NGINX_PROXY_IP}
+    working_dir: /var/www/vhosts/
+    restart: on-failure:10
+    depends_on:
+      - rest_postgres
+
+  rest_postgres:
+    image: postgres:11.1
+    container_name: rest_postgres
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - ./data-postgres:/var/lib/postgresql/data:rw
+    ports:
+      - "${POSTGRES_PORT}:5432"
+
+networks:
+  default:
+    external:
+      name: rest-nginx-proxy

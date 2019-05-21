@@ -1,0 +1,5 @@
+/.env
+/.env.local
+data-postgres/
+log/
+profiler/

@@ -5,12 +5,12 @@
 
 Tworzymy sieć z dedykowanym lokalnym IP
 ``` 
-docker network create nginx-proxy --subnet=172.20.0.0/16 --gateway=172.20.0.1
+docker network create rest-nginx-proxy --subnet=172.20.0.0/16 --gateway=172.20.0.1
 ```
 
 Sprawdzamy sieć
 ``` 
-docker network inspect nginx-proxy
+docker network inspect rest-nginx-proxy
 ```
 
 Dodajemy do /etc/hosts IP gateway 

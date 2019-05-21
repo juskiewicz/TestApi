@@ -150,7 +150,7 @@ class UserController extends BaseController
         $userService->updateUser($userUpdate);
 
         return $this->createResponse(
-            Response::HTTP_CREATED,
+            Response::HTTP_OK,
             ['user' => $userUpdate],
             [BaseGroups::BASE, UserGroups::USER_EDIT]
         );

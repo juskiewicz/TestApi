@@ -23,7 +23,7 @@ class AuthController extends BaseController
      * @return Response
      * @throws Exception
      */
-    public function users(
+    public function login(
         Request $request,
         LoginService $loginService
     ): Response {

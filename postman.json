@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "id": "aed4bfc1-378d-4823-8ed2-0dfae1cc1a65",
+      "name": "TestApi",
+      "description": "",
+      "auth": null,
+      "events": null,
+      "variables": [],
+      "order": [],
+      "folders_order": [
+        "0c490f9c-73dc-4576-9b8e-2e3299c0ad4a"
+      ],
+      "folders": [
+        {
+          "id": "0c490f9c-73dc-4576-9b8e-2e3299c0ad4a",
+          "name": "ms_security",
+          "description": "",
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "key": "token",
+                "value": "f1996163d7b4ce5ca2320fb25ff4dff2aed8e0bf5d29787d7deb01dfc44a0af58c8f6bd4f192a1472bd03bf75c9f6570cd5ad476482c6acd7d5c2675"
+              }
+            ]
+          },
+          "events": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "8e433c11-7da4-442b-b570-9bf6dc30aaff",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "id": "ba11ad50-6dc9-4480-95d6-ccca7b75025f",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "collection": "aed4bfc1-378d-4823-8ed2-0dfae1cc1a65",
+          "folder": null,
+          "order": [
+            "5290bb09-8504-4fd5-aa21-189536f8709e",
+            "193673c7-ebd9-4832-8eaf-cc54158814b1",
+            "bdf761d3-0f1f-4d87-b0bb-0eaaaeed89fc",
+            "aa2da482-d9d5-4ac4-97e9-5d41247a3bb7",
+            "99bde68e-a670-45f3-9c9d-430c84c1bcd4"
+          ],
+          "folders_order": [],
+          "collectionId": "aed4bfc1-378d-4823-8ed2-0dfae1cc1a65",
+          "folderId": "0c490f9c-73dc-4576-9b8e-2e3299c0ad4a"
+        }
+      ],
+      "requests": [
+        {
+          "id": "193673c7-ebd9-4832-8eaf-cc54158814b1",
+          "name": "Add user",
+          "url": "http://api.rest.loc:8010/users",
+          "description": "",
+          "data": [],
+          "dataMode": "raw",
+          "headerData": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text",
+              "enabled": true,
+              "description": ""
+            }
+          ],
+          "method": "POST",
+          "pathVariableData": [],
+          "queryParams": [],
+          "auth": {
+            "type": "bearer",
+            "bearer": [
+              {
+                "key": "token",
+                "value": "f1996163d7b4ce5ca2320fb25ff4dff2aed8e0bf5d29787d7deb01dfc44a0af58c8f6bd4f192a1472bd03bf75c9f6570cd5ad476482c6acd7d5c2675"
+              }
+            ]
+          },
+          "events": null,
+          "folder": "0c490f9c-73dc-4576-9b8e-2e3299c0ad4a",
+          "currentHelper": "bearerAuth",
+          "helperAttributes": {
+            "id": "bearer",
+            "token": "f1996163d7b4ce5ca2320fb25ff4dff2aed8e0bf5d29787d7deb01dfc44a0af58c8f6bd4f192a1472bd03bf75c9f6570cd5ad476482c6acd7d5c2675"
+          },
+          "collectionId": "aed4bfc1-378d-4823-8ed2-0dfae1cc1a65",
+          "rawModeData": "{\n\t\"username\": \"koko22\",\n    \"name\": \"Kamil\",\n    \"surname\": \"Kamilowy\",\n    \"password\": \"alan\"\n}",
+          "headers": "Content-Type: application/json\n",
+          "pathVariables": {}
+        },
+        {
+          "id": "5290bb09-8504-4fd5-aa21-189536f8709e",
+          "name": "List users",
+          "url": "http://api.rest.loc:8010/users",
+          "description": "",
+          "data": null,
+          "dataMode": null,
+          "headerData": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "type": "text",
+              "enabled": true
+            }
+          ],
+          "method": "GET",
+          "pathVariableData": [],
+          "queryParams": [],
+          "auth": null,
+          "events": null,
+          "folder": "0c490f9c-73dc-4576-9b8e-2e3299c0ad4a",
+          "currentHelper": null,
+          "helperAttributes": null,
+          "collectionId": "aed4bfc1-378d-4823-8ed2-0dfae1cc1a65",
+          "headers": "Content-Type: application/json\n",
+          "pathVariables": {}
+        },
+        {
+          "id": "99bde68e-a670-45f3-9c9d-430c84c1bcd4",
+          "name": "Login",
+          "url": "http://api.rest.loc:8010/login?username=juskiewicz&password=demo1",
+          "description": "",
+          "data": null,
+          "dataMode": null,
+          "headerData": [
+            {
+              "description": "",
+              "enabled": true,
+              "key": "X-AUTHENTICATION-TOKEN",
+              "type": "text",
+              "value": "NotSoSecret"
+            },
+            {
+              "description": "",
+              "enabled": true,
+              "key": "Content-Type",
+              "type": "text",
+              "value": "application/json"
+            },
+            {
+              "description": "",
+              "enabled": true,
+              "key": "X-AUTH-USER-ID",
+              "type": "text",
+              "value": "1"
+            }
+          ],
+          "method": "GET",
+          "pathVariableData": [],
+          "queryParams": [
+            {
+              "key": "username",
+              "value": "juskiewicz",
+              "equals": true,
+              "description": "",
+              "enabled": true
+            },
+            {
+              "key": "password",
+              "value": "demo1",
+              "equals": true,
+              "description": "",
+              "enabled": true
+            }
+          ],
+          "auth": null,
+          "events": null,
+          "folder": "0c490f9c-73dc-4576-9b8e-2e3299c0ad4a",
+          "currentHelper": null,
+          "helperAttributes": null,
+          "collectionId": "aed4bfc1-378d-4823-8ed2-0dfae1cc1a65",
+          "headers": "X-AUTHENTICATION-TOKEN: NotSoSecret\nContent-Type: application/json\nX-AUTH-USER-ID: 1\n",
+          "pathVariables": {}
+        },
+        {
+          "id": "aa2da482-d9d5-4ac4-97e9-5d41247a3bb7",
+          "name": "View user",
+          "url": "http://api.rest.loc:8010/users/1",
+          "description": "",
+          "data": null,
+          "dataMode": null,
+          "headerData": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "type": "text",
+              "enabled": true,
+              "description": ""
+            }
+          ],
+          "method": "GET",
+          "pathVariableData": [],
+          "queryParams": [],
+          "auth": null,
+          "events": null,
+          "folder": "0c490f9c-73dc-4576-9b8e-2e3299c0ad4a",
+          "currentHelper": null,
+          "helperAttributes": null,
+          "collectionId": "aed4bfc1-378d-4823-8ed2-0dfae1cc1a65",
+          "headers": "Content-Type: application/json\n",
+          "pathVariables": {}
+        },
+        {
+          "id": "bdf761d3-0f1f-4d87-b0bb-0eaaaeed89fc",
+          "name": "Edit user",
+          "url": "http://api.rest.loc:8010/users/1",
+          "description": "",
+          "data": [],
+          "dataMode": "raw",
+          "headerData": [
+            {
+              "description": "",
+              "enabled": true,
+              "key": "Content-Type",
+              "type": "text",
+              "value": "application/json"
+            }
+          ],
+          "method": "PATCH",
+          "pathVariableData": [],
+          "queryParams": [],
+          "auth": null,
+          "events": null,
+          "folder": "0c490f9c-73dc-4576-9b8e-2e3299c0ad4a",
+          "currentHelper": null,
+          "helperAttributes": null,
+          "collectionId": "aed4bfc1-378d-4823-8ed2-0dfae1cc1a65",
+          "rawModeData": "{\n\t\"id\": 1,\n\t\"username\": \"juskiewicz\",\n    \"name\": \"Kamil2\",\n    \"surname\": \"Kamilowy\",\n    \"password\": \"alan\"\n}",
+          "headers": "Content-Type: application/json\n",
+          "pathVariables": {}
+        }
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "id": "f8951f2b-94d8-4d9b-b26e-6f665fe7d609",
+      "name": "Team Workspace - globals",
+      "values": []
+    }
+  ],
+  "headerPresets": [],
+  "globals": []
+}

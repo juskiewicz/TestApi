@@ -13,7 +13,7 @@ Sprawdzamy sieć
 docker network inspect nginx-proxy
 ```
 
-Dodajemy do /ete/hosts IP gateway 
+Dodajemy do /etc/hosts IP gateway 
 ``` 
 sudo echo "172.18.0.1 souvre.lh" >> /etc/hosts
 ```

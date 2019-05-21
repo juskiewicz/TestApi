@@ -90,8 +90,7 @@ class UserController extends BaseController
         if ($errors->count()) {
             return  $this->createResponse(
                 Response::HTTP_BAD_REQUEST,
-                ['errors' => $errors],
-                [BaseGroups::BASE, UserGroups::USER_VIEW]
+                ['errors' => $errors]
             );
         }
 
@@ -100,7 +99,7 @@ class UserController extends BaseController
         return $this->createResponse(
             Response::HTTP_CREATED,
             ['user' => $user],
-            [BaseGroups::BASE, UserGroups::USER_VIEW]
+            [BaseGroups::BASE, UserGroups::USER_ADD]
         );
     }
 
@@ -144,8 +143,7 @@ class UserController extends BaseController
         if ($errors->count()) {
             return  $this->createResponse(
                 Response::HTTP_BAD_REQUEST,
-                ['errors' => $errors],
-                [BaseGroups::BASE, UserGroups::USER_VIEW]
+                ['errors' => $errors]
             );
         }
 
@@ -154,7 +152,7 @@ class UserController extends BaseController
         return $this->createResponse(
             Response::HTTP_CREATED,
             ['user' => $userUpdate],
-            [BaseGroups::BASE, UserGroups::USER_VIEW]
+            [BaseGroups::BASE, UserGroups::USER_EDIT]
         );
     }
 }

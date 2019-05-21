@@ -90,13 +90,13 @@ abstract class BaseController extends AbstractController
     }
 
     /**
-     * @param int        $code
-     * @param array      $data
-     * @param array|null $groups
+     * @param int   $code
+     * @param array $data
+     * @param array $groups
      *
      * @return JsonResponse
      */
-    protected function createResponse(int $code, array $data, ?array $groups): JsonResponse
+    protected function createResponse(int $code, array $data, array $groups = []): JsonResponse
     {
         return JsonResponse::fromJsonString(
             $this->serialize(

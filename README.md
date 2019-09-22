@@ -1,3 +1,15 @@
+### Opis zadania
+
+--------------------------------------------------------------------------------
+
+1. Nie korzystając z zewnętrznych "bundli", zbudować prostą aplikację, w której będzie możliwe utworzenie konta i logowanie.
+2. W aplikacji z pkt. 1., nadal nie korzystając z bundli, stworzyć REST'owy kontroler odpowiadający za operacje CRUD na obiekcie User. API powinno przyjmować i zwracać dane w formacie JSON.
+3. (Dodatkowe) Zabezpieczyć API z pkt. 2. tak, aby wywołania były możliwe dopiero po autoryzacji użytkownika.
+ 
+
+Należy korzystać z Doctrine,
+Należy korzystać z Symfony 4.
+
 
 ### Docker
 
